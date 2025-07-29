@@ -1,4 +1,4 @@
-import User from "../models/User";
+import User from "../models/User.js";
 import { Inngest } from "inngest";
 
 // Create a client to send and receive events
@@ -31,7 +31,7 @@ const syncUserDeletion = inngest.createFunction(
 );
 // Inngest Function to update user data in  database
 const syncUserUpdation = inngest.createFunction(
-  { id: "delete-user-with-clerk" },
+  { id: "update-user-with-clerk" },
   { event: "clerk/user.updated" },
   async ({ event }) => {
     const { id, first_name, last_name, email_address, image_url } = event.data;
