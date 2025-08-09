@@ -2,7 +2,7 @@ import { ChartLineIcon, CircleDollarSignIcon, PlayCircleIcon, StarIcon, UsersIco
 import React, { useEffect, useState } from 'react'
 import { dummyDashboardData } from '../../assets/assets';
 import Loading from '../../components/Loading';
-import Title from '../../components/admin/Title.jsx';
+import Title from '../../components/admin/Title';
 import BlurCircle from '../../components/BlurCircle';
 import { dateFormat } from '../../lib/dateFormat.js';
 import { useAppContext } from '../../context/AppContext.jsx';
@@ -75,7 +75,7 @@ const Dashboard = () => {
         <BlurCircle top='100px' left='-10%' />
         {dashboardData.activeShows.map((show) =>(
             <div className='w-55 rounded-lg overflow-hidden h-full pb-3 bg-primary/10 border border-primary/20 hover:-translate-y-1 transition duration-300'>
-                <img src={show.movie.poster_path} alt="" className='h-60 w-full object-cover' />
+                <img src={ image_base_url + show.movie.poster_path} alt="" className='h-60 w-full object-cover' />
                 <p className='font-medium p-2 truncate'>{show.movie.title}</p>
                 <div className='flex items-center justify-between px-2'>
                     <p className='text-lg font-medium'>{currency} {show.showPrice}</p>
